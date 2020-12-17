@@ -1,4 +1,4 @@
-# WorkoutTracker
+# Workout Tracker
 ![MIT](https://img.shields.io/badge/license-MIT-blueviolet)
 
 ## Description 
@@ -11,7 +11,7 @@ add here
 * [Contributing](#contributing)
 * [Tests](#tests)
 * [Questions](#questions)
-* [Link](#links)
+* [Links](#links)
 
 ## Installation
 add here
