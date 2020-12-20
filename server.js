@@ -1,32 +1,31 @@
 const express = require("express");
-const mongojs = require("mongojs");
+const mongoose = require("mongoose");
+const logger = require("morgan");
+
+const PORT = process.env.PORT || 3000;
 
 const app = express();
 
-const databaseUrl = "#";
-const collections = ["#"];
+app.use(logger("dev"));
 
-const db = mongojs(databaseUrl, collections);
+app.use(express.urlencoded({extended: true}));
+app.use(express.json());
 
-db.on("error", error => {
-  console.log("Database Error:", error);
-});
+app.use(express.static("public"));
 
-app.get("/", (req, res) => {
-  res.send("Hello world");
-});
+mongoose.connect(
+  process.env.MONGODB_URI || 'mongodb://localhost/workout_tracker',
+  {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useCreateIndex: true,
+    useFindAndModify: false
+  }
+);
 
-app.get("/all", (req, res) => {
-  db.animals.find({}, (err, data) => {
-    if (err) {
-      console.log(err);
-    } else {
-      res.json(data);
-    }
-  });
-});
+// routes //
 
-// Set the app to listen on port 3000
-app.listen(3000, () => {
-  console.log("App running on port 3000!");
+// Set the app to listen on port 
+app.listen(PORT, () => {
+  console.log(`App running on port ${PORT}!`);
 });
