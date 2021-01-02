@@ -30,5 +30,5 @@ If you have any additional questions about this application you can reach out to
 You can check out some of my other projects at briannahebeler (https://github.com/briannahebeler).
 
 ## Links
-* The URL to the deployed application
-* The URL to the GitHub repository
+* The URL to the deployed application: https://workout-tracker-briheb.herokuapp.com/
+* The URL to the GitHub repository: https://github.com/briannahebeler/workout-tracker
