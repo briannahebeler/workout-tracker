@@ -47,5 +47,17 @@ router.put("/api/workouts/:id", (req,res) => {
 });
 
 // get stats for all workouts chart //
+router.get("/api/workouts/range", (req, res) => {
+    console.log("inside workout range data");
+    Workout.find({})
+    .sort({ date: -1 })
+    .then(dbWorkout => {
+        res.json(dbWorkout);
+    })
+    .catch(err => {
+        console.log(err);
+        res.status(400).json(err);
+    })
+});
 
 module.exports = router;
