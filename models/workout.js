@@ -7,6 +7,9 @@ const workoutSchema = new Schema({
         type: Date,
         default: Date.now()
     },
+    totalDuration: {
+        type: Number,
+    },
     exercises: [
         {
             type: {
@@ -40,10 +43,7 @@ const workoutSchema = new Schema({
                 // required: "Enter the amount of sets"
             }
         }
-    ],
-    totalDuration: {
-        type: Number,
-    }
+    ]
 })
 
 const Workout = mongoose.model("Workout", workoutSchema);
